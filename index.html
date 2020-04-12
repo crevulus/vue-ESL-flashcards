@@ -3,20 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>ESL Flashcards</title>
 </head>
 <body>
   <header>Title goes here</header>
   <main id="esl-flashcards">
     <div>
-      <div>Input box1 goes here</div>
-      <div>Input box2 goes here</div>
-      <div>submit</div>
+      <form>
+        <input v-model="inputPhrase" type="text" placeholder="phrase">
+        <input v-model="inputDef" type="text" placeholder="definition">
+        <button @click="addNewFC">Add Card</button>
+      </form>
     </div>
-    <ul>
-      <li v-for="flashcard in flashcards">
-        <p>{{flashcard.phrase}}</p>
-        <p>{{flashcard.defintion}}</p>
+    <ul class="flashcard-list">
+      <li 
+        v-for="(flashcard, index) in flashcards"
+        class="flashcard"
+        v-bind:class="{ learned: isLearned }"
+        @click="toggleSide(flashcard)">
+        <p>{{flashcard.isFlipped ? flashcard.phrase : flashcard.definition}}</p>
+        <button @click="learnedCard(flashcard, index)">Learned</button>
       </li>
     </ul>
   </main>

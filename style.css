@@ -1,0 +1,13 @@
+.flashcard-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flashcard {
+  border: 1px solid black;
+}
+
+.learned {
+  background-color: green;
+}

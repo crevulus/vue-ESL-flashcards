@@ -40,12 +40,11 @@ new Vue({
       });
     },
     learnedCard: function(flashcard, index) {
-      flashcards.forEach((card) => {
-        if (card[index] === flashcard[index]) {
-          console.log('in here');
-          card.isLearned = !card.isLearned;
+      for (let i = 0; i < flashcards.length; i += 1){
+        if (i === index) {
+          flashcards[i].isLearned = !flashcards[i].isLearned;
         }
-      });
+      };
     },
   },
 });

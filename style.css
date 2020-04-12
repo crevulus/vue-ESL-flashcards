@@ -8,6 +8,10 @@
   border: 1px solid black;
 }
 
+.unlearned {
+  background-color: rgba(119, 183, 255, 0.411)
+}
+
 .learned {
   background-color: green;
 }

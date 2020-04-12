@@ -19,8 +19,7 @@
     <ul class="flashcard-list">
       <li 
         v-for="(flashcard, index) in flashcards"
-        class="flashcard"
-        v-bind:class="{ learned: isLearned }"
+        v-bind:class="{learned: flashcard.isLearned, flashcard}"
         @click="toggleSide(flashcard)">
         <p>{{flashcard.isFlipped ? flashcard.phrase : flashcard.definition}}</p>
         <button @click="learnedCard(flashcard, index)">Learned</button>

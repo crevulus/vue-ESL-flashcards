@@ -37,14 +37,12 @@ new Vue({
         phrase: this.inputPhrase,
         definition: this.inputDef,
         isFlipped: false,
+        isLearned: false,
       });
     },
     learnedCard: function(flashcard, index) {
-      for (let i = 0; i < flashcards.length; i += 1){
-        if (i === index) {
-          flashcards[i].isLearned = !flashcards[i].isLearned;
-        }
-      };
+      var card = this.flashcards.find((f,i) => i===index)
+      card.isLearned = !card.isLearned;
     },
   },
 });

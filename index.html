@@ -7,21 +7,18 @@
   <title>ESL Flashcards</title>
 </head>
 <body>
-  <header>Title goes here</header>
+  <header class="title">Title goes here</header>
   <main id="esl-flashcards">
-    <div>
-      <form>
-        <input v-model="inputPhrase" type="text" placeholder="phrase">
-        <input v-model="inputDef" type="text" placeholder="definition">
-        <button @click="addNewFC">Add Card</button>
-      </form>
-    </div>
+    <form class="input-form">
+      <input class="input-box" v-model="inputPhrase" type="text" placeholder="phrase">
+      <input class="input-box" v-model="inputDef" type="text" placeholder="definition"></br>
+      <button class="submit-btn" @click="addNewFC">Add Card</button>
+    </form>
     <ul class="flashcard-list">
       <li 
-        v-for="(flashcard, index) in flashcards"
         v-bind:class="{learned: flashcard.isLearned, flashcard}"
-        @click="toggleSide(flashcard)">
-        <p>{{flashcard.isFlipped ? flashcard.phrase : flashcard.definition}}</p>
+        v-for="(flashcard, index) in flashcards">
+        <p @click="toggleSide(flashcard)">{{flashcard.isFlipped ? flashcard.phrase : flashcard.definition}}</p>
         <button @click="learnedCard(flashcard, index)">Learned</button>
       </li>
     </ul>

@@ -1,1 +1,9 @@
-Vue project: build ESL flashcard app
+# Vue project: build ESL flashcard app
+1. Render phrase and definition
+2. Flip between the two
+3. Mark as learned
+4. Add new cards via input
+
+# Styling
+1. Use font family from local drive
+2. Use flexbox for positioning

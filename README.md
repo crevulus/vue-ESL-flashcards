@@ -5,5 +5,6 @@
 4. Add new cards via input
 
 # Styling
-1. Use font family from local drive
+1. Use font family & background from local drive
 2. Use flexbox for positioning
+3. Transition animations on flip

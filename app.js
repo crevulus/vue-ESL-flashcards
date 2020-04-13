@@ -32,6 +32,10 @@ new Vue({
       flashcard.isFlipped = !flashcard.isFlipped;
     },
     addNewFC: function(event) {
+      if (!this.inputFront || !this.inputBack) {
+        alert('Please input a valid phrase/description');
+        return;
+      }
       event.preventDefault();
       this.flashcards.push({
         phrase: this.inputPhrase,

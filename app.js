@@ -45,7 +45,7 @@ new Vue({
       });
     },
     learnedCard: function(flashcard, index) {
-      var card = this.flashcards.find((f,i) => i===index)
+      var card = this.flashcards.find((f, i) => i === index)
       card.isLearned = !card.isLearned;
     },
   },
